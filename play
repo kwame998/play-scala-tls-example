@@ -45,6 +45,10 @@ JVM_OPTIONS="$JVM_OPTIONS -Dcom.sun.net.ssl.rsaPreMasterSecretFix=true"
 JVM_OPTIONS="$JVM_OPTIONS -Dsun.security.ssl.allowUnsafeRenegotiation=false"
 JVM_OPTIONS="$JVM_OPTIONS -Dsun.security.ssl.allowLegacyHelloMessages=false"
 
+# Enable HTTP/2 on Akka HTTP
+JVM_OPTIONS="$JVM_OPTIONS -Dakka.http.server.preview.enable-http2=on"
+JVM_OPTIONS="$JVM_OPTIONS -Dakka.http.server.remote-address-header=on"
+
 # Enable this if you need to use OCSP or CRL
 # http://docs.oracle.com/javase/8/docs/technotes/guides/security/certpath/CertPathProgGuide.html#AppC
 #JVM_OPTIONS="$JVM_OPTIONS -Dcom.sun.security.enableCRLDP=true"
